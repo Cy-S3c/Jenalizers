@@ -1,7 +1,8 @@
 /**
- * Advanced Endpoint & Secret Extractor v3.1
- * Author: 0xV0RT3X
- * Purpose: Bug Bounty Reconnaissance
+ * Jenalizers v3.1
+ * Advanced Endpoint & Secret Extractor for Bug Bounty
+ * Author: 0xV0RT3X (Cy-S3c)
+ * GitHub: https://github.com/Cy-S3c/Jenalizers
  *
  * CHANGELOG v3.1:
  * - FIXED: Endpoint regex was capturing numeric literals (10, 11, 12...)
@@ -27,7 +28,7 @@
 (function() {
     'use strict';
 
-    console.log('[Endpoint Extractor v3.1] Starting...');
+    console.log('[Jenalizers v3.1] Starting...');
 
     // Valid TLDs for domain validation (common ones)
     const VALID_TLDS = new Set([
@@ -602,7 +603,7 @@
 
         return JSON.stringify({
             meta: {
-                tool: 'Endpoint Extractor v3.1',
+                tool: 'Jenalizers v3.1',
                 target: results.target,
                 url: window.location.href,
                 timestamp: results.timestamps,
@@ -695,7 +696,7 @@
 
     // Generate Markdown report
     function generateMarkdown() {
-        let md = `# Endpoint Extraction Report v3.1\n\n`;
+        let md = `# Jenalizers Report v3.1\n\n`;
         md += `**Target:** ${results.target}\n`;
         md += `**URL:** ${window.location.href}\n`;
         md += `**Timestamp:** ${new Date().toISOString()}\n\n`;
@@ -792,7 +793,7 @@
         results.timestamps.end = new Date().toISOString();
 
         const overlay = document.createElement('div');
-        overlay.id = 'endpoint-extractor-overlay';
+        overlay.id = 'jenalizers-overlay';
         overlay.style.cssText = `
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #1a1a2e; color: #eee; overflow: auto; z-index: 99999;
@@ -808,9 +809,9 @@
         // Header
         let html = `
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h1 style="color: #e94560; margin: 0;">Endpoint Extractor v3.1</h1>
+                <h1 style="color: #e94560; margin: 0;">Jenalizers v3.1</h1>
                 <div>
-                    <button onclick="document.getElementById('endpoint-extractor-overlay').remove()"
+                    <button onclick="document.getElementById('jenalizers-overlay').remove()"
                             style="background: #e94560; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-size: 14px;">
                         Close
                     </button>
@@ -1075,7 +1076,7 @@
     // Main execution
     async function main() {
         await processScripts();
-        console.log('[Endpoint Extractor v3.1] Analysis complete.');
+        console.log('[Jenalizers v3.1] Analysis complete.');
         console.log(`[Stats] Endpoints: ${results.endpoints.size}, API: ${results.apiEndpoints.size}, Admin: ${results.adminPaths.size}, Domains: ${results.domains.size}`);
         renderUI();
     }

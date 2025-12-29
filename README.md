@@ -1,14 +1,10 @@
-# Jenalizers
+# Jenalizers v3.1
 
-A collection of JavaScript-based reconnaissance tools for bug bounty hunters and security researchers.
+Advanced JavaScript-based reconnaissance tool for bug bounty hunters and security researchers.
 
-## Tools
+![Jenalizers Screenshot](screenshot.png)
 
-### Endpoint Extractor v3.1
-
-A powerful browser-based tool that extracts endpoints, API routes, domains, secrets, and parameters from web applications by analyzing JavaScript files and page content.
-
-#### Features
+## Features
 
 - **Endpoint Discovery** - Extracts paths, API routes, admin panels, and interesting endpoints
 - **Domain Enumeration** - Finds subdomains and external domains with TLD validation
@@ -18,7 +14,7 @@ A powerful browser-based tool that extracts endpoints, API routes, domains, secr
 - **Multiple Export Formats** - JSON, CSV, Markdown, and plain text
 - **Interactive UI** - Tabbed interface with copy-to-clipboard functionality
 
-#### What It Detects
+## What It Detects
 
 | Category | Examples |
 |----------|----------|
@@ -27,30 +23,28 @@ A powerful browser-based tool that extracts endpoints, API routes, domains, secr
 | **Domains** | Subdomains, Third-party services, CDN URLs, API hosts |
 | **Parameters** | Query parameters, Form fields, Hidden inputs |
 
-#### Installation
+## Installation
 
-**Option 1: DevTools Snippet (Recommended)**
+### Option 1: DevTools Snippet (Recommended)
 
-1. Open Chrome DevTools (F12)
+1. Open Chrome DevTools (`F12`)
 2. Go to **Sources** > **Snippets**
 3. Click **+ New snippet**
-4. Paste the contents of `endpoint-extractor.js`
+4. Paste the contents of `jenalizers.js`
 5. Save and run with `Ctrl+Enter`
 
-**Option 2: Bookmarklet**
+### Option 2: Bookmarklet
 
 Create a bookmark with this URL:
 ```javascript
-javascript:(function(){var s=document.createElement('script');s.src='https://raw.githubusercontent.com/Cy-S3c/Jenalizers/main/endpoint-extractor.js';document.body.appendChild(s);})();
+javascript:(function(){var s=document.createElement('script');s.src='https://raw.githubusercontent.com/Cy-S3c/Jenalizers/main/jenalizers.js';document.body.appendChild(s);})();
 ```
 
-> Note: Due to URL length limits, bookmarklets may have reduced functionality. DevTools Snippet is recommended for full features.
-
-**Option 3: Console**
+### Option 3: Console
 
 Copy and paste the entire script into browser console.
 
-#### Usage
+## Usage
 
 1. Navigate to your target website
 2. Run the script using your preferred method
@@ -58,7 +52,7 @@ Copy and paste the entire script into browser console.
 4. Use the interactive UI to explore findings
 5. Export results in your preferred format
 
-#### Output
+## Output
 
 The tool provides:
 
@@ -67,12 +61,12 @@ The tool provides:
 - **Tabbed Results** - Endpoints, API, Admin, Interesting, Params, JS Files, Domains
 - **Export Buttons** - JSON, CSV, Markdown, Endpoints list, Parameters list, Domains list
 
-#### Example Output (JSON)
+## Example Output (JSON)
 
 ```json
 {
   "meta": {
-    "tool": "Endpoint Extractor v3.1",
+    "tool": "Jenalizers v3.1",
     "target": "https://example.com",
     "stats": {
       "totalEndpoints": 156,
@@ -94,17 +88,16 @@ The tool provides:
 }
 ```
 
-#### Changelog
+## Changelog
 
-**v3.1**
+### v3.1
 - Fixed domain enumeration (was matching JS object paths like `window.NREUM`)
 - Fixed endpoint extraction (was capturing numeric literals like `10`, `11`)
 - Added TLD validation for domains
 - Added comprehensive JS pattern exclusion
 - Added minified variable pattern filtering
-- Improved false positive detection
 
-**v3.0**
+### v3.0
 - Added subdomain grouping by root domain
 - Improved secret detection with context and severity levels
 - Added path normalization
@@ -113,7 +106,7 @@ The tool provides:
 
 ## Legal Disclaimer
 
-These tools are intended for authorized security testing only. Always ensure you have permission before testing any target. The author is not responsible for any misuse of these tools.
+This tool is intended for **authorized security testing only**. Always ensure you have explicit permission before testing any target. The author is not responsible for any misuse of this tool.
 
 ## Author
 
