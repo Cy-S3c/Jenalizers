@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Results/Output
+results/
+output/
+*.json
+!package.json
+
+# Node
+node_modules/
+
+# Temp
+*.tmp
+*.bak
